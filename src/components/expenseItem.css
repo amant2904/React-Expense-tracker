@@ -1,0 +1,7 @@
+.main_div{
+    display: flex;
+    border: 2px solid black;
+    padding: 4px;
+    justify-content: space-around;
+    border-radius: 23px;
+}
