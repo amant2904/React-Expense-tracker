@@ -2,14 +2,17 @@ import React from 'react'
 import "./expenseItem.css"
 import ExpenseDate from './ExpenseDate'
 import ExpenseDetails from './ExpenseDetails'
+import Card from './Card.js'
 
 export default function ExpenseItem(props) {
     return (
-        <div className='expense-item'>
+        <Card className='expense-item'>
             <ExpenseDate date={props.date} />
-            <p>{props.item}</p>
-            <p>{props.locationOfExpenditure}</p>
-            <ExpenseDetails amount={props.amount} />
-        </div>
+            <div className='expense_data'>
+                <h1>{props.item}</h1>
+                <h1>{props.locationOfExpenditure}</h1>
+                <ExpenseDetails amount={props.amount} />
+            </div>
+        </Card>
     )
 }

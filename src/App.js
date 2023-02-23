@@ -1,5 +1,6 @@
 import './App.css';
 import ExpenseItem from './components/ExpenseItem.js';
+import Card from './components/Card';
 
 function App() {
   const expenses = [{
@@ -33,15 +34,19 @@ function App() {
   {
     id: 5,
     date: new Date(2023, 11, 12),
-    item: "health",
+    item: "healthh",
     cost: 1354.67,
     locationOfExpenditure: "Hospital"
   }]
   return (
     <>
-      {expenses.map((expenses) => {
-        return <ExpenseItem date={expenses.date} item={expenses.item} amount={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure}></ExpenseItem>
-      })}
+      <div className='header'>
+        <Card className="expense_items">
+          {expenses.map((expenses) => {
+            return <ExpenseItem date={expenses.date} item={expenses.item} amount={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure}></ExpenseItem>
+          })}
+        </Card>
+      </div>
     </>
   );
 }

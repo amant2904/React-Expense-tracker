@@ -1,0 +1,6 @@
+.expense_amount{
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 6px;
+    background-color: rgb(136, 8, 255);
+}

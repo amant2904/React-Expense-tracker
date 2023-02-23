@@ -1,8 +1,18 @@
 .expense-item{
     border: 2px solid white;
     margin : 10px auto;
-    width: 80vw;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-radius: 18px;
+    background-color: rgb(43, 34, 34);
+}
+.expense_data{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    margin: 0px 20px;
 }
