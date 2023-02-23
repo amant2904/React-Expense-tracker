@@ -1,8 +1,8 @@
 import './App.css';
-import ExpenseItem from './components/ExpenseItem.js';
-import Card from './components/Card';
+import ExpenseItem from './components/Expenses/ExpenseItem.js';
+import Card from './components/UI/Card.js';
 
-function App() {
+const App = () => {
   const expenses = [{
     id: 1,
     date: new Date(2023, 11, 12),
