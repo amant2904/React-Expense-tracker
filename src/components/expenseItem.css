@@ -4,4 +4,6 @@
     padding: 4px;
     justify-content: space-around;
     border-radius: 23px;
+    width: 80vw;
+    margin: 10px auto;
 }
