@@ -9,6 +9,7 @@ export default function ExpenseItem(props) {
                 <h1>{props.item}</h1>
                 <h1>{props.cost}</h1>
                 <h1>{props.locationOfExpenditure}</h1>
+                <h1>{props.Key}</h1>
             </div>
         </>
     )

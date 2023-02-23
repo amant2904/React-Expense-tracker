@@ -3,35 +3,35 @@ import ExpenseItem from './components/ExpenseItem.js';
 
 function App() {
   const expenses = [{
-    key: 1,
+    id: 1,
     date: new Date(23, 12, 2023),
     item: "food",
     cost: 235.67,
     locationOfExpenditure: "KFC"
   },
   {
-    key: 2,
+    id: 2,
     date: new Date(23, 12, 2024),
     item: "movie",
     cost: 260.67,
     locationOfExpenditure: "cinema hall"
   },
   {
-    key: 3,
+    id: 3,
     date: new Date(23, 9, 2021),
     item: "clothes",
     cost: 235.67,
     locationOfExpenditure: "shopping mall"
   },
   {
-    key: 4,
+    id: 4,
     date: new Date(23, 12, 2023),
     item: "travel",
     cost: 2355.67,
     locationOfExpenditure: "Hill Station"
   },
   {
-    key: 5,
+    id: 5,
     date: new Date(23, 12, 2023),
     item: "health",
     cost: 1354.67,
@@ -45,7 +45,7 @@ function App() {
       <ExpenseItem date={expenses[3].date} item={expenses[3].item} cost={expenses[3].cost} locationOfExpenditure={expenses[3].locationOfExpenditure} />
       <ExpenseItem date={expenses[4].date} item={expenses[4].item} cost={expenses[4].cost} locationOfExpenditure={expenses[4].locationOfExpenditure} /> */}
       {expenses.map((expenses) => {
-        return <ExpenseItem Key={expenses.key} date={expenses.date} item={expenses.item} cost={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure} />
+        return <ExpenseItem key={expenses.id} date={expenses.date} item={expenses.item} cost={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure} />
       })}
     </>
   );
