@@ -1,9 +1,8 @@
-.main_div{
-    display: flex;
-    border: 2px solid black;
-    padding: 4px;
-    justify-content: space-around;
-    border-radius: 23px;
+.expense-item{
+    border: 2px solid white;
+    margin : 10px auto;
     width: 80vw;
-    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

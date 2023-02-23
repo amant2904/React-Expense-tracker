@@ -4,48 +4,43 @@ import ExpenseItem from './components/ExpenseItem.js';
 function App() {
   const expenses = [{
     id: 1,
-    date: new Date(23, 12, 2023),
+    date: new Date(2023, 11, 12),
     item: "food",
     cost: 235.67,
     locationOfExpenditure: "KFC"
   },
   {
     id: 2,
-    date: new Date(23, 12, 2024),
+    date: new Date(2023, 11, 12),
     item: "movie",
     cost: 260.67,
     locationOfExpenditure: "cinema hall"
   },
   {
     id: 3,
-    date: new Date(23, 9, 2021),
+    date: new Date(2023, 11, 12),
     item: "clothes",
     cost: 235.67,
     locationOfExpenditure: "shopping mall"
   },
   {
     id: 4,
-    date: new Date(23, 12, 2023),
+    date: new Date(2023, 11, 12),
     item: "travel",
     cost: 2355.67,
     locationOfExpenditure: "Hill Station"
   },
   {
     id: 5,
-    date: new Date(23, 12, 2023),
+    date: new Date(2023, 11, 12),
     item: "health",
     cost: 1354.67,
     locationOfExpenditure: "Hospital"
   }]
   return (
     <>
-      {/* <ExpenseItem date={expenses[0].date} item={expenses[0].item} cost={expenses[0].cost} locationOfExpenditure={expenses[0].locationOfExpenditure} />
-      <ExpenseItem date={expenses[1].date} item={expenses[1].item} cost={expenses[1].cost} locationOfExpenditure={expenses[1].locationOfExpenditure} />
-      <ExpenseItem date={expenses[2].date} item={expenses[2].item} cost={expenses[2].cost} locationOfExpenditure={expenses[2].locationOfExpenditure} />
-      <ExpenseItem date={expenses[3].date} item={expenses[3].item} cost={expenses[3].cost} locationOfExpenditure={expenses[3].locationOfExpenditure} />
-      <ExpenseItem date={expenses[4].date} item={expenses[4].item} cost={expenses[4].cost} locationOfExpenditure={expenses[4].locationOfExpenditure} /> */}
       {expenses.map((expenses) => {
-        return <ExpenseItem key={expenses.id} date={expenses.date} item={expenses.item} cost={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure} />
+        return <ExpenseItem date={expenses.date} item={expenses.item} amount={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure}></ExpenseItem>
       })}
     </>
   );
