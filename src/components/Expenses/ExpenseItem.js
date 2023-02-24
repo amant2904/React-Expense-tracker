@@ -22,6 +22,7 @@ const ExpenseItem = (props) => {
                 <h1>{props.locationOfExpenditure}</h1>
                 <ExpenseDetails amount={props.amount} />
             </div>
+            <button className='dlt_btn'>Delete</button>
         </Card>
     )
 }

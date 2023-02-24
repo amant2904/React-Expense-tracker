@@ -39,15 +39,11 @@ const App = () => {
     locationOfExpenditure: "Hospital"
   }]
   return (
-    <>
-      <div className='header'>
-        <Card className="expense_items">
-          {expenses.map((expenses) => {
-            return <ExpenseItem date={expenses.date} item={expenses.item} amount={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure}></ExpenseItem>
-          })}
-        </Card>
-      </div>
-    </>
+    <Card className="expense_items">
+      {expenses.map((expenses) => {
+        return <ExpenseItem date={expenses.date} item={expenses.item} amount={expenses.cost} locationOfExpenditure={expenses.locationOfExpenditure}></ExpenseItem>
+      })}
+    </Card>
   );
 }
 
