@@ -16,12 +16,17 @@
     /* padding: 0px 10px; */
     margin: 0px 20px;
 }
-.dlt_btn{
+.btn{
     margin: 0px 17px 0px 0px;
     padding: 13px 25px;
     border-radius: 8px;
-    background-color: #d83030;
     border: 1px solid white;
     color: white;
     cursor: pointer;
+}
+.dlt_btn{
+    background-color: #d83030;
+}
+.edit_expense{
+    background-color: rgb(231, 150, 0);
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./expenseItem.css"
 import ExpenseDate from './ExpenseDate'
 import ExpenseDetails from './ExpenseDetails'
@@ -14,15 +14,26 @@ const ExpenseItem = (props) => {
     //     )
     // )
 
+    const [item, setItem] = useState(props.item)
+    const [expense, setExpense] = useState(props.amount)
+    const dltBtn_handler = () => {
+        setItem("Updated!!!!..");
+        console.log(item);
+    }
+
+    const editExpense = () => {
+        setExpense("100");
+    }
     return (
         <Card className='expense-item'>
             <ExpenseDate date={props.date} />
             <div className='expense_data'>
-                <h1>{props.item}</h1>
+                <h1>{item}</h1>
                 <h1>{props.locationOfExpenditure}</h1>
-                <ExpenseDetails amount={props.amount} />
+                <ExpenseDetails amount={expense} />
             </div>
-            <button className='dlt_btn'>Delete</button>
+            <button className='btn dlt_btn' onClick={dltBtn_handler}>Delete</button>
+            <button className='btn edit_expense' onClick={editExpense}>Edit Title</button>
         </Card>
     )
 }
