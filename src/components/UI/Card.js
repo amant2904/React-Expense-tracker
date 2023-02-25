@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Card(props) {
-    const classes = `card ${props.className}`
+    const classes = `${props.className}`
     return (
         <div className={classes}>{props.children}</div>
     )
