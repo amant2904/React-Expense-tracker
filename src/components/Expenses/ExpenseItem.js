@@ -29,7 +29,7 @@ const ExpenseItem = (props) => {
             <ExpenseDate date={props.date} />
             <div className='expense_data'>
                 <h1>{item}</h1>
-                <h1>{props.locationOfExpenditure}</h1>
+                {/* <h1>{props.locationOfExpenditure}</h1> */}
                 <ExpenseDetails amount={expense} />
             </div>
             <button className='btn dlt_btn' onClick={dltBtn_handler}>Delete</button>

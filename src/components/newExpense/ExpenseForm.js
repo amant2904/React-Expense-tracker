@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import './ExpenseForm.css'
 
-export default function ExpenseForm() {
+export default function ExpenseForm(props) {
     const [enteredTitle, setEnteredTitle] = useState('');
     const title_change = (event) => {
         setEnteredTitle(event.target.value);
@@ -18,35 +18,36 @@ export default function ExpenseForm() {
         setEnteredDate(event.target.value);
     }
 
-    const formSubmit_btn = (e) => {
+    const formSubmit_handler = (e) => {
         e.preventDefault();
-        let obj = {
+        let expenseData = {
+            id: Math.random(),
             title: enteredTitle,
             amount: enteredAmount,
-            date: enteredDate
+            date: new Date(enteredDate)
         }
-        console.log(obj);
+        props.liftUpExpenseDataInApp(expenseData);
     }
     return (
         <Card className="expense-form">
-            <form action="/">
+            <form onSubmit={formSubmit_handler}>
                 <div className="part_one">
                     <div>
                         <label htmlFor="title">Title</label><br />
-                        <input type="text" name="title" id="title" placeholder="Enter Title here" onChange={title_change} />
+                        <input type="text" name="title" id="title" value={enteredTitle} placeholder="Enter Title here" onChange={title_change} />
                     </div>
                     <div>
                         <label htmlFor="amount">Amount</label><br />
-                        <input type="number" name="amount" id="amount" placeholder="Enter Amount Here" onChange={amount_change} />
+                        <input type="number" name="amount" id="amount" value={enteredAmount} placeholder="Enter Amount Here" onChange={amount_change} />
                     </div>
                 </div>
                 <div className="part_two">
                     <div>
                         <label htmlFor="date">Date</label><br />
-                        <input type="date" name="date" id="date" onChange={date_change} min="2019-01-01" max="2023-12-31" />
+                        <input type="date" name="date" id="date" value={enteredDate} onChange={date_change} min="2019-01-01" max="2023-12-31" />
                     </div>
                     <div className="form_button">
-                        <button className="addExpense_btn" onClick={formSubmit_btn}>Add Expense</button>
+                        <input type="submit" id="addExpense_btn" value="Add Expense" />
                     </div>
                 </div>
             </form>

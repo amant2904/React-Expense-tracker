@@ -51,7 +51,7 @@
 .form_button{
     align-self: flex-end;
 }
-.addExpense_btn{
+#addExpense_btn{
     margin: 0px 0px 10px 0px;
     padding: 10px 9px;
     border-radius: 8px;
