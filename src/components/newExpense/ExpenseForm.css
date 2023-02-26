@@ -1,7 +1,7 @@
 .expense-form{
     height: 250px;
-    width: 80%;
-    background-color: rgb(136, 8, 255);
+    width: 100%;
+    background-color: rgb(101, 45, 255);
     margin: 15px auto;
     border-radius: 29px;
     display: flex;
@@ -19,35 +19,45 @@
     justify-content: space-between;
     margin: 5px auto;
     width: 70%;
+    height: 100%;
+    align-items: center;
 }
 .part_two{
     display: flex;
     justify-content: space-between;
     margin: 5px auto;
     width: 70%;
+    height: 100%;
+    align-items: center;
 }
 .expense-form form label{
     font-size: 26px;
     margin: 0px 0px 5px 0px;
+    color: black;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px white;
     /* display: block; */
     /* text-align: center; */
 }
 .expense-form form input{
     font-size: 22px;
-    padding: 5px;
+    padding: 8px;
     border: none;
     border-radius: 6px;
+}
+.expense-form form input:active{
+    border: 2px solid red;
 }
 .form_button{
     align-self: flex-end;
 }
 .addExpense_btn{
-    margin: 0px 17px 0px 0px;
+    margin: 0px 0px 10px 0px;
     padding: 10px 9px;
     border-radius: 8px;
     border: 1px solid white;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
-    background-color: #79daff;
+    background-color: #0e007a;
     font-size: 22px;
 }

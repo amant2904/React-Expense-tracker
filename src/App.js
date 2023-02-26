@@ -1,7 +1,7 @@
 import './App.css';
 import ExpenseItem from './components/Expenses/ExpenseItem.js';
 import Card from './components/UI/Card.js';
-import ExpenseForm from './components/Expenses/ExpenseForm';
+import ExpenseForm from './components/newExpense/ExpenseForm';
 
 const App = () => {
   const expenses = [{
