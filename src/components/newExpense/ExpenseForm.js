@@ -17,6 +17,16 @@ export default function ExpenseForm() {
     const date_change = (event) => {
         setEnteredDate(event.target.value);
     }
+
+    const formSubmit_btn = (e) => {
+        e.preventDefault();
+        let obj = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: enteredDate
+        }
+        console.log(obj);
+    }
     return (
         <Card className="expense-form">
             <form action="/">
@@ -36,7 +46,7 @@ export default function ExpenseForm() {
                         <input type="date" name="date" id="date" onChange={date_change} min="2019-01-01" max="2023-12-31" />
                     </div>
                     <div className="form_button">
-                        <button className="addExpense_btn">Add Expense</button>
+                        <button className="addExpense_btn" onClick={formSubmit_btn}>Add Expense</button>
                     </div>
                 </div>
             </form>
