@@ -14,11 +14,13 @@ const App = () => {
     })
   }
 
+  // this is filter value
   const [filter__value, setFilter__value] = useState("all");
   const liftUpFilterValue = (filterValue) => {
     setFilter__value(filterValue);
   }
 
+  // this is filterd expenses array based on filter value
   const expenses_filterByYear = (expenses, filter__value) => {
     return expenses.filter((i) => {
       if (filter__value === "all") {
@@ -29,11 +31,13 @@ const App = () => {
       }
     })
   }
+
   return (
     <Card className="all_code">
       <ExpenseForm liftUpExpenseDataInApp={liftUpExpenseDataInApp_handler}></ExpenseForm>
       <Card className="expense_items">
         <ExpenseFilter selected={filter__value} liftUpValueInApp={liftUpFilterValue} />
+        {/* this is filter mechanism using map on filtered expenses array*/}
         {expenses_filterByYear(expenses, filter__value).map((expenses) => {
           return <ExpenseItem
             key={expenses.id}
