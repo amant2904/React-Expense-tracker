@@ -9,11 +9,12 @@ const App = () => {
 
   const [expenses, setExpenses] = useState([]);
   const liftUpExpenseDataInApp_handler = (expenseDataInApp) => {
-    setExpenses([...expenses, expenseDataInApp])
+    setExpenses((prvExpense) => {
+      return [expenseDataInApp, ...prvExpense];
+    })
   }
 
   const [filter__value, setFilter__value] = useState("all");
-
   const liftUpFilterValue = (filterValue) => {
     setFilter__value(filterValue);
   }
@@ -34,7 +35,12 @@ const App = () => {
       <Card className="expense_items">
         <ExpenseFilter selected={filter__value} liftUpValueInApp={liftUpFilterValue} />
         {expenses_filterByYear(expenses, filter__value).map((expenses) => {
-          return <ExpenseItem key={expenses.id} date={expenses.date} item={expenses.title} amount={expenses.amount}></ExpenseItem>
+          return <ExpenseItem
+            key={expenses.id}
+            date={expenses.date}
+            item={expenses.title}
+            amount={expenses.amount}
+          />
         })}
       </Card>
     </Card>
