@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Card from "../UI/Card";
 import './ExpenseForm.css'
 
 export default function ExpenseForm(props) {
@@ -17,8 +16,9 @@ export default function ExpenseForm(props) {
     const date_change = (event) => {
         setEnteredDate(event.target.value);
     }
+    // const [formUI, setFormUI] = useState(<button className="addExpense_mainBtn" id="mainBtn" onClick={mainBtn_handler}>Add New Expense</button>)
 
-    const formSubmit_handler = (e) => {
+    function formSubmit_handler(e) {
         e.preventDefault();
         let expenseData = {
             id: Math.random(),
@@ -27,30 +27,52 @@ export default function ExpenseForm(props) {
             date: new Date(enteredDate)
         }
         props.liftUpExpenseDataInApp(expenseData);
+        setHide("0");
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     }
+    const [hide, setHide] = useState("0");
+
+    function cancelBtn_handler(e) {
+        setHide("0");
+
+    }
+
+    function mainBtn_handler() {
+        setHide("1");
+    }
+
+
+
     return (
-        <Card className="expense-form">
-            <form onSubmit={formSubmit_handler}>
-                <div className="part_one">
-                    <div>
-                        <label htmlFor="title">Title</label><br />
-                        <input type="text" name="title" id="title" value={enteredTitle} placeholder="Enter Title here" onChange={title_change} />
+        <div className="expense-form">
+            {/* {formUI} */}
+            {hide === "0" ?
+                <button className="addExpense_mainBtn" id="mainBtn" onClick={mainBtn_handler}>Add New Expense</button> :
+                <form hidden={true}>
+                    <div className="part_one">
+                        <div>
+                            <label htmlFor="title">Title</label><br />
+                            <input type="text" name="title" id="title" value={enteredTitle} placeholder="Enter Title here" onChange={title_change} />
+                        </div>
+                        <div>
+                            <label htmlFor="amount">Amount</label><br />
+                            <input type="number" name="amount" id="amount" value={enteredAmount} placeholder="Enter Amount Here" onChange={amount_change} />
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="amount">Amount</label><br />
-                        <input type="number" name="amount" id="amount" value={enteredAmount} placeholder="Enter Amount Here" onChange={amount_change} />
+                    <div className="part_two">
+                        <div>
+                            <label htmlFor="date">Date</label><br />
+                            <input type="date" name="date" id="date" value={enteredDate} onChange={date_change} min="2019-01-01" max="2023-12-31" />
+                        </div>
+                        <div className="form_button">
+                            <button className="addExpense_btn" onClick={cancelBtn_handler}>Cancel</button>
+                            <button className="addExpense_btn" onClick={formSubmit_handler}>Add Expense</button>
+                        </div>
                     </div>
-                </div>
-                <div className="part_two">
-                    <div>
-                        <label htmlFor="date">Date</label><br />
-                        <input type="date" name="date" id="date" value={enteredDate} onChange={date_change} min="2019-01-01" max="2023-12-31" />
-                    </div>
-                    <div className="form_button">
-                        <input type="submit" id="addExpense_btn" value="Add Expense" />
-                    </div>
-                </div>
-            </form>
-        </Card>
+                </form>
+            }
+        </div>
     )
 }

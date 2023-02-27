@@ -1,5 +1,4 @@
 .expense-form{
-    height: 250px;
     width: 100%;
     background-color: rgb(101, 45, 255);
     margin: 15px auto;
@@ -13,6 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 20px 0px;
 }
 .part_one{
     display: flex;
@@ -51,8 +51,8 @@
 .form_button{
     align-self: flex-end;
 }
-#addExpense_btn{
-    margin: 0px 0px 10px 0px;
+#addExpense_btn, .addExpense_btn{
+    margin: 0px 5px 0px;
     padding: 10px 9px;
     border-radius: 8px;
     border: 1px solid white;
@@ -60,4 +60,16 @@
     cursor: pointer;
     background-color: #0e007a;
     font-size: 22px;
+}
+.addExpense_mainBtn{
+    font-size: 22px;
+    display: inline;
+    width: 20%;
+    margin: 24px auto;
+    padding: 12px;
+    background-color: #0000ae;
+    color: white;
+    border-radius: 9px;
+    border: 1px solid white;
+    cursor: pointer;
 }
