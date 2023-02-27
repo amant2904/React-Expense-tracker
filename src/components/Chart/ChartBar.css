@@ -9,15 +9,15 @@
 .inner{
     height: 90%;
     width: 50%;
-    background-color: #ffc1f3;
-    border: 1px solid red;
+    background-color: #fff1d0;
+    border: 1px solid #ffb3b3;
     border-radius: 15px;   
     display: flex;
     align-items: flex-end; 
     overflow: hidden;
 }
 .inner_fill{
-    background-color: black;
+    background-color: #091251;
     width: 100%;
 }
 .monthLabel{

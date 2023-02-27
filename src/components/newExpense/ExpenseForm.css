@@ -1,8 +1,8 @@
 .expense-form{
     width: 100%;
-    background-color: rgb(101, 45, 255);
+    background-color: rgb(179 255 254);;
     margin: 15px auto;
-    border-radius: 29px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -42,7 +42,6 @@
 .expense-form form input{
     font-size: 22px;
     padding: 8px;
-    border: none;
     border-radius: 6px;
 }
 .expense-form form input:active{
@@ -67,7 +66,7 @@
     width: 20%;
     margin: 24px auto;
     padding: 12px;
-    background-color: #0000ae;
+    background-color: #070776;
     color: white;
     border-radius: 9px;
     border: 1px solid white;
