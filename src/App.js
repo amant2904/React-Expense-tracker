@@ -1,13 +1,39 @@
 import React, { useState } from 'react';
 import './App.css';
-import ExpenseItem from './components/Expenses/ExpenseItem.js';
 import Card from './components/UI/Card.js';
 import ExpenseForm from './components/newExpense/ExpenseForm';
 import ExpenseFilter from './components/Expenses/ExpenseFilter';
+import ExpenseList from './components/Expenses/ExpenseList';
 
 const App = () => {
 
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([
+    {
+      id: Math.random(),
+      date: new Date(2023, 11, 10),
+      title: "food",
+      amount: "200.34"
+    },
+    {
+      id: Math.random(),
+      date: new Date(2023, 11, 10),
+      title: "book",
+      amount: "200.34"
+    },
+    {
+      id: Math.random(),
+      date: new Date(2022, 11, 10),
+      title: "movie",
+      amount: "200.34"
+    },
+    {
+      id: Math.random(),
+      date: new Date(2021, 11, 10),
+      title: "travel",
+      amount: "200.34"
+    },
+  ]);
+  // getting expense data from expenses Form
   const liftUpExpenseDataInApp_handler = (expenseDataInApp) => {
     setExpenses((prvExpense) => {
       return [expenseDataInApp, ...prvExpense];
@@ -16,12 +42,12 @@ const App = () => {
 
   // this is filter value
   const [filter__value, setFilter__value] = useState("all");
-  const liftUpFilterValue = (filterValue) => {
-    setFilter__value(filterValue);
+  const liftUpFilterValue = (selectedValue) => {
+    setFilter__value(selectedValue);
   }
 
   // this is filterd expenses array based on filter value
-  const expenses_filterByYear = (expenses, filter__value) => {
+  const expenses_filterByYear = () => {
     return expenses.filter((i) => {
       if (filter__value === "all") {
         return i;
@@ -37,19 +63,10 @@ const App = () => {
       <ExpenseForm liftUpExpenseDataInApp={liftUpExpenseDataInApp_handler}></ExpenseForm>
       <Card className="expense_items">
         <ExpenseFilter selected={filter__value} liftUpValueInApp={liftUpFilterValue} />
-        {/* this is filter mechanism using map on filtered expenses array*/}
-        {expenses_filterByYear(expenses, filter__value).map((expenses) => {
-          return <ExpenseItem
-            key={expenses.id}
-            date={expenses.date}
-            item={expenses.title}
-            amount={expenses.amount}
-          />
-        })}
+        <ExpenseList allExpense={expenses_filterByYear} />
       </Card>
     </Card>
   );
 }
-// {/* <ExpenseItem key={expenses.id} date={expenses.date} item={expenses.title} amount={expenses.amount}></ExpenseItem> */ } */}
 
 export default App;
